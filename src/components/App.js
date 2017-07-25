@@ -43,11 +43,13 @@ componentDidMount(){
     // Each component needs to receive state via props.
     return (
         <BaseLayout >
+        <div className="menu">
+        <h2>Menu</h2>
           <Appetizers items={this.state.appetizers}/>
           <Entrees items={this.state.entrees}/>
           <Desserts items={this.state.desserts}/>
+        </div>
         </BaseLayout>
-
     );
   }
 }
