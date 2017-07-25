@@ -29,10 +29,12 @@ componentDidMount(){
   fetch('http://tiny-lasagna-server.herokuapp.com/collections/reactthaimenu')
   .then(results => results.json())
   .then(data => {
-    console.log(data)
-  })
-  .catch(function(error){
-    console.log(error)
+    this.setState({
+      appetizers: data[0].Appetizers,
+      entrees: data[0].Entrees,
+      desserts: data[0].Desserts
+    })
+    console.log(this.state)
   })
 }
 
@@ -41,9 +43,9 @@ componentDidMount(){
     // Each component needs to receive state via props.
     return (
         <BaseLayout >
-          <Appetizers />
-          <Entrees />
-          <Desserts />
+          <Appetizers items={this.state.appetizers}/>
+          <Entrees items={this.state.entrees}/>
+          <Desserts items={this.state.desserts}/>
         </BaseLayout>
 
     );
