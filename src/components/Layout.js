@@ -4,24 +4,26 @@ import '../styles/App.css';
 export default class BaseLayout extends Component {
 
   render(){
-    {/*
-      Creat two inline variables:
-      titleStyle (font, Arizonia. size, 150) for 'restaurant-name'
-      subtitleStyle (font, Raleway. size, 80) for 'subtitle'
-      */}
+    let titleStyle = {
+      fontFamily: 'Arizonia',
+      fontSize: 150
+    }
 
-    {/*
-      Create an inline.
-      headerSytle:
-      "textAlign": "center",
-      "height": "30vw",
-      "color": "#fff",
-      "backgroundImage": "url(http://www.joysthaifood.com/wp-content/uploads/2016/03/Thai-fish-Lemon-Soup.jpg)",
-      "backgroundSize": "cover",
-      "backgroundPosition": "center",
-      "boxShadow": "1px 17px 5px 0px rgba(0, 0, 0, 0.75)",
-      "fontFamily": "decorative",
-      */}
+    let subtitleStyle = {
+      fontFamily: 'Raleway',
+      fontSize: 80
+    }
+
+    let headerSytle = {
+      textAlign: "center",
+      height: "30vw",
+      color: "#fff",
+      backgroundImage: 'url(http://www.joysthaifood.com/wp-content/uploads/2016/03/Thai-fish-Lemon-Soup.jpg)',
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      boxShadow: "1px 17px 5px 0px rgba(0, 0, 0, 0.75)",
+      fontFamily: "decorative",
+    }
 
     return (
       <div className="container-fluid nav">
@@ -35,9 +37,9 @@ export default class BaseLayout extends Component {
             </ul>
           </div>
           <div className="col-md-12 header">
-            <div className="header-title">
-              <h1 className="restaurant-name">Majestic Thai</h1>
-              <h3 className="subtitle">East Meets West</h3>
+            <div className="header-title" style={headerSytle}>
+              <h1 className="restaurant-name" style={titleStyle}>Majestic Thai</h1>
+              <h3 className="subtitle" style={subtitleStyle}>East Meets West</h3>
             </div>
           </div>
         </nav>
